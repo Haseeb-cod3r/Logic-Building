@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Product list with cart</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cart-container"></div>
+
+      <div class="item-list">
+        <div class="item-list-top">
+          <h1>
+            Your Cart (<span class="counter-for-item-list-heading">0</span>)
+          </h1>
+        </div>
+
+        <div class="item-list-bottom">
+          <img
+            src="assets\images\illustration-empty-cart.svg"
+            alt=""
+            id="item-list-bottom-img"
+          />
+          <p id="item-list-bottom-p">Your added item will be apeare here</p>
+        </div>
+        <div class="order-total">
+          <h3>order Total</h3>
+          <h1>$<span id="total-amount"></span></h1>
+        </div>
+        <div class="order-confirmed">
+          <button id="btn">Order Confirmed</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
