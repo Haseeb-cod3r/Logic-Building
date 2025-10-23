@@ -1,0 +1,162 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: hsl(27, 66%, 92%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ===== Section 1 (Balance Card) ===== */
+.sec1 {
+  background-color: hsl(10, 79%, 65%);
+  color: white;
+  width: 340px;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sec1-right p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.sec1-right h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.sec1-left img {
+  width: 50px;
+}
+
+/* ===== Section 2 (Chart Card) ===== */
+.sec2 {
+  background-color: white;
+  width: 340px;
+  border-radius: 15px;
+  padding: 25px 20px;
+}
+
+.sec2 h1 {
+  color: hsl(25, 47%, 15%);
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+}
+
+/* ===== Chart Bars ===== */
+.charts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 160px;
+  margin-bottom: 10px;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  position: relative;
+  height: 100%;
+}
+
+/* Hidden amount tooltip */
+.amount {
+  background-color: hsl(25, 47%, 15%);
+  color: white;
+  padding: 6px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: -35px;
+}
+
+/* Bar itself */
+.bar {
+  width: 35px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: hsl(10, 79%, 65%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Bar hover and tooltip show */
+.bar:hover {
+  background-color: hsl(10, 79%, 75%);
+}
+
+.chart:hover .amount {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Day labels */
+.day {
+  color: hsl(28, 10%, 53%);
+  font-size: 0.9rem;
+}
+
+/* ===== Bottom Section ===== */
+.sec2-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid hsl(27, 66%, 92%);
+  padding-top: 20px;
+}
+
+.total-spending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.total-spending p {
+  margin-top: 40px;
+  color: hsl(28, 10%, 53%);
+  font-size: 0.9rem;
+}
+
+.total-spending h1 {
+  color: hsl(25, 47%, 15%);
+  font-size: 2rem;
+}
+
+.total-percentage {
+  text-align: right;
+}
+
+.total-percentage p:first-child {
+  color: hsl(25, 47%, 15%);
+  font-weight: 700;
+}
+
+.total-percentage p:last-child {
+  color: hsl(28, 10%, 53%);
+  font-size: 0.9rem;
+}
