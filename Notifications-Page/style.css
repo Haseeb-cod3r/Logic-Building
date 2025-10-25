@@ -1,0 +1,208 @@
+/* ------------------- */
+/* GENERAL STYLES */
+/* ------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+
+:root {
+  --clr-primary-blue: hsl(219, 85%, 26%);
+  --clr-red: hsl(1, 90%, 64%);
+  --clr-light-grayish-blue-1: hsl(212, 60%, 95%);
+  --clr-light-grayish-blue-2: hsl(211, 68%, 94%);
+  --clr-grayish-blue: hsl(219, 14%, 63%);
+  --clr-dark-grayish-blue: hsl(219, 12%, 42%);
+  --clr-very-dark-blue: hsl(224, 21%, 14%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--clr-light-grayish-blue-1);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* ------------------- */
+/* CONTAINER */
+/* ------------------- */
+
+.container {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 650px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------- */
+/* HEADER SECTION */
+/* ------------------- */
+
+.sec1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sec1 h1 {
+  font-size: 1.5rem;
+  color: var(--clr-very-dark-blue);
+}
+
+#counter {
+  background-color: var(--clr-primary-blue);
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 0.2rem 0.6rem;
+  margin-left: 0.5rem;
+}
+
+.sec1 h2 {
+  font-size: 0.9rem;
+  color: var(--clr-dark-grayish-blue);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sec1 h2:hover {
+  color: var(--clr-primary-blue);
+}
+
+/* ------------------- */
+/* NOTIFICATIONS */
+/* ------------------- */
+
+.notificaion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: var(--clr-light-grayish-blue-1); /* default = unread */
+  transition: background 0.3s;
+}
+
+.notification.read {
+  background-color: #fff; /* when marked read */
+}
+
+.notification img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ------------------- */
+/* DETAILS + SUMMARY */
+/* ------------------- */
+
+details {
+  width: 100%;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+/* summary::-webkit-details-marker {
+  display: block;
+} */
+
+summary p {
+  color: var(--clr-dark-grayish-blue);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+summary strong {
+  color: var(--clr-very-dark-blue);
+  cursor: pointer;
+}
+
+summary strong:hover {
+  color: var(--clr-primary-blue);
+}
+
+summary span#circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--clr-red);
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+summary + p {
+  margin-top: 0.8rem;
+  background-color: var(--clr-light-grayish-blue-2);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--clr-dark-grayish-blue);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ------------------- */
+/* STATE STYLING */
+/* ------------------- */
+
+details[open] summary {
+  border-bottom: 1px solid var(--clr-light-grayish-blue-2);
+  padding-bottom: 0.5rem;
+}
+
+/* ------------------- */
+/* HOVER EFFECTS */
+/* ------------------- */
+
+.notification:hover {
+  background-color: var(--clr-light-grayish-blue-2);
+}
+
+/* ------------------- */
+/* RESPONSIVE */
+/* ------------------- */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .notification {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sec1 h1 {
+    font-size: 1.3rem;
+  }
+
+  .sec1 h2 {
+    font-size: 0.8rem;
+  }
+}
