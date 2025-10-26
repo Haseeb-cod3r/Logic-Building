@@ -1,0 +1,217 @@
+/* -------- Google Font -------- */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+/* -------- Reset -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 3rem;
+}
+
+/* -------- Logo -------- */
+img[alt=""] {
+  width: 70px;
+}
+
+/* -------- Container -------- */
+.container {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 700px;
+  max-width: 90%;
+  gap: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* -------- Left (Input Section) -------- */
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  color: hsl(186, 14%, 43%);
+  font-size: 14px;
+}
+
+/* input wrapper for icons */
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 15px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  background-color: hsl(180, 57%, 91%);
+  border: none;
+  outline: none;
+  text-align: right;
+  padding: 10px 15px;
+  padding-left: 35px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+}
+
+.input-wrapper input:focus {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+/* -------- Tip Grid -------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.tip {
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tip:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.tip#active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+/* custom tip input */
+.custom {
+  width: 100%;
+  min-width: 0;
+  background-color: hsl(189, 41%, 97%);
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  color: hsl(183, 100%, 15%);
+}
+
+#custom::placeholder {
+  color: hsl(184, 14%, 56%);
+}
+
+/* -------- Right (Results Section) -------- */
+.left {
+  flex: 1;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.amount-container,
+.total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left h2 {
+  font-size: 14px;
+  color: hsl(185, 41%, 84%);
+  margin-bottom: 5px;
+}
+
+.left span {
+  font-size: 32px;
+  color: hsl(172, 67%, 45%);
+  display: block;
+}
+
+button {
+  background-color: hsl(172, 67%, 45%);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-size: 18px;
+  color: hsl(183, 100%, 15%);
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+button:active {
+  background-color: hsl(0, 0%, 100%);
+  transition: none;
+}
+/* === Error Message Styling === */
+#bill-err,
+#tip-err,
+#people-err {
+  color: hsl(0, 80%, 60%);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: none; /* hidden by default */
+}
+
+/* Optional: to keep layout stable even when hidden */
+#bill-err.show,
+#tip-err.show,
+#people-err.show {
+  display: block;
+  animation: fadeIn 0.2s ease-in;
+}
+
+/* Small fade-in animation for a smoother look */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+  .left {
+    height: 250px;
+  }
+}
