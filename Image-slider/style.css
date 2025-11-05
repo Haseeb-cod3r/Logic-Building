@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  height: 100%;
+  transition: all 0.8s ease-in-out;
+  position: relative;
+  right: 0%;
+}
+
+.slides {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+
+.slide1 {
+  background-image: url("https://i.pinimg.com/736x/85/f3/61/85f361f859cd06b55e5d14fe09e4b9f8.jpg");
+}
+.slide2 {
+  background-image: url("https://i.pinimg.com/736x/f2/36/64/f236649229d18c971d79d8576ef39db3.jpg");
+}
+.slide3 {
+  background-image: url("https://i.pinimg.com/736x/b8/8b/fa/b88bfa6a74b6d7ed7bdd4ea1e22ae327.jpg");
+}
+.slide4 {
+  background-image: url("https://i.pinimg.com/736x/2e/f8/49/2ef849961ad6c4742c14f458b4bfd48f.jpg");
+}
+.slide5 {
+  background-image: url("https://i.pinimg.com/736x/91/e0/46/91e04644ef340d414e0c25328b8bd57a.jpg");
+}
+
+
+button {
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button img {
+  width: 25px;
+  height: 25px;
+  filter: invert(1);
+  transform: rotate(0deg);
+}
+
+#left img {
+  transform: rotate(180deg);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
