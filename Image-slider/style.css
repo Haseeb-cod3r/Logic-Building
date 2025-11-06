@@ -8,13 +8,19 @@ body {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
+  padding: 20px;
 }
-
+.containerr {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 .container {
   width: 300px;
   height: 350px;
@@ -39,7 +45,6 @@ body {
   filter: brightness(0.9);
 }
 
-
 .slide1 {
   background-image: url("https://i.pinimg.com/736x/85/f3/61/85f361f859cd06b55e5d14fe09e4b9f8.jpg");
 }
@@ -55,7 +60,6 @@ body {
 .slide5 {
   background-image: url("https://i.pinimg.com/736x/91/e0/46/91e04644ef340d414e0c25328b8bd57a.jpg");
 }
-
 
 button {
   border: none;
@@ -81,4 +85,76 @@ button img {
 button:hover {
   background: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  padding: 20px 20px 20px 0px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.medium {
+  display: flex;
+  animation-name: slide;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.wrapper:hover .medium {
+  animation-play-state: paused !important;
+}
+
+.item {
+  flex: 0 0 300px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex: 0 0 220px;
+    height: 180px;
+  }
+
+  .wrapper {
+    padding: 10px;
+  }
 }
