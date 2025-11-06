@@ -105,10 +105,14 @@ button:hover {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-play-state: running;
+  animation-delay: 2s;
 }
 
 .wrapper:hover .medium {
   animation-play-state: paused !important;
+}
+.wrapper:hover .item {
+  filter: grayscale(100%);
 }
 
 .item {
@@ -117,7 +121,7 @@ button:hover {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, all 0.3s ease;
   background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   margin-left: 20px;
@@ -126,6 +130,7 @@ button:hover {
 .item:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  filter: grayscale(0%) !important;
 }
 
 .item img {

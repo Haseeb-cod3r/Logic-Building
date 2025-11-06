@@ -1,62 +1,52 @@
 const right = document.getElementById("right");
 const left = document.getElementById("left");
 const slider = document.querySelector(".slider");
+const clone = slider.children[0].cloneNode(true);
+slider.append(clone);
 
-const firstClone = slider.children[0].cloneNode(true);
-slider.append(firstClone);
 let sliderCounter = 0;
 let intervalId = null;
 
-function runIntervel() {
+function runSlider() {
   return setInterval(() => {
-    
+    if (sliderCounter < slider.children.length - 1) {
       slider.style.transition = "all 0.8s ease-in-out";
-      ++sliderCounter;
+      sliderCounter += 1;
       slider.style.right = `${sliderCounter}00%`;
-    
-
+    }
     if (sliderCounter === slider.children.length - 1) {
       setTimeout(() => {
         slider.style.transition = "none";
         sliderCounter = 0;
-        slider.style.right = `${sliderCounter}00%`;
+        slider.style.right = "0%";
       }, 800);
     }
   }, 2000);
 }
-intervalId = runIntervel();
-
-function interval() {
-  return setTimeout(() => {
-    intervalId = runIntervel();
-  }, 1000);
-}
-
-let id = null;
-
-right.addEventListener("click", (e) => {
+intervalId = runSlider();
+right.addEventListener("click", () => {
   clearInterval(intervalId);
-  clearTimeout(id);
+
   if (sliderCounter < slider.children.length - 1) {
     slider.style.transition = "none";
-
-    ++sliderCounter;
-  } else {
-    sliderCounter = 1;
+    sliderCounter += 1;
+    slider.style.right = `${sliderCounter}00%`;
   }
-  slider.style.right = `${sliderCounter}00%`;
-  id = interval();
+  if (sliderCounter === slider.children.length - 1) {
+    sliderCounter = 0;
+    slider.style.right = "0%";
+  }
+  intervalId = runSlider();
 });
-left.addEventListener("click", (e) => {
+left.addEventListener("click", () => {
   clearInterval(intervalId);
-  clearTimeout(id);
   if (sliderCounter > 0) {
     slider.style.transition = "none";
-    --sliderCounter;
-  } else {
+    sliderCounter -= 1;
+    slider.style.right = `${sliderCounter}00%`;
+  } else if (sliderCounter === 0) {
     sliderCounter = slider.children.length - 2;
+    slider.style.right = `${sliderCounter}00%`;
   }
-  slider.style.right = `${sliderCounter}00%`;
-  id = interval();
+  intervalId = runSlider();
 });
-
