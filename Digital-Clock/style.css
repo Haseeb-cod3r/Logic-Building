@@ -1,0 +1,96 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: '', sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: 'Poppins', sans-serif;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 40px 70px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.clock span {
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
+}
+
+#ampm {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+.watch-container {
+  color: #fff;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.counter {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.counter span {
+  width: 70px;
+  text-align: center;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 25px;
+  margin: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.3);
+}
