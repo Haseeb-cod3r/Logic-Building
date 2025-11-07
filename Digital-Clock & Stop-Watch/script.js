@@ -36,7 +36,7 @@ let intervalId = null;
 function startCounter() {
   if (intervalId) return;
   intervalId = setInterval(() => {
-    milliSecCounter += 1;
+    milliSecCounter += 10;
     if (milliSecCounter >= 1000) {
       secCounter += 1;
       milliSecCounter = 0;
@@ -52,7 +52,7 @@ function startCounter() {
     min.innerText = String(minCounter).padStart(2, "0");
     sec.innerText = String(secCounter).padStart(2, "0");
     milliSec.innerText = String(milliSecCounter).padStart(3, "0");
-  }, 1);
+  }, 10);
 }
 
 function stopCounter() {
