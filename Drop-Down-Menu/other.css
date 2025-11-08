@@ -1,0 +1,65 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  height: 100vh;
+  color: white;
+  background-color: black;
+}
+.loader {
+  margin-inline: auto;
+  margin-top: 30%;
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #f03355) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l4 1s infinite steps(10);
+}
+@keyframes l4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+h1,
+h2 {
+  width: max-content;
+  margin-inline: auto;
+  margin-top: 100px;
+  color: aqua;
+  font-size: 5rem;
+  animation: updown 3s linear infinite;
+  cursor: pointer;
+}
+h1 {
+  display: none;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
