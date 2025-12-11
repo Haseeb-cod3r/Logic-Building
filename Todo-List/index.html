@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="dark">
+    <div class="bg">
+      <img class="noselect" src="./images/bg-desktop-dark.jpg" alt="" id="bg" />
+    </div>
+    <div class="container">
+      <div class="sec1">
+        <h1 class="noselect">TODO</h1>
+        <img class="noselect" src="images/icon-sun.svg" alt="" id="darkLight" />
+      </div>
+
+      <div class="sec2">
+        <div class="sec2-circle"></div>
+        <input
+          type="text"
+          name=""
+          id="input"
+          placeholder="Create a new todo..."
+        />
+      </div>
+
+      <div class="sec3"></div>
+
+      <div class="sec4">
+        <div><span id="taskCount" class="noselect">No items</span></div>
+        <div id="all" class="h3 bottomBtn selected">All</div>
+        <div id="active" class="h3 bottomBtn">Active</div>
+        <div id="complete" class="h3 bottomBtn">Complete</div>
+        <div class="h3" id="clear">Clear All</div>
+      </div>
+    </div>
+  </body>
+</html>
